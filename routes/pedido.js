@@ -1,15 +1,14 @@
-const { request, response } = require("express")
 const express = require("express")
-const pedido = require("../model/pedido")
 const router = express.Router()
 const { check, validationResult } = require('express-validator')
+
 const Pedido = require('../model/pedido')
 const validaPedido = [
-    check("numero","Informe o número do pedido").not().isEmpty(),
-    check("cliente","Informe o cliente do pedido").not().isEmpty(),
-    check("descricao","Informe o equipamento vendido").not().isEmpty(),
-    check("valor","Informe o valor do pedido").not().isEmpty(),
-    check("Empresa","Informe um fabricante válido para o pedido").isIn(["Briggs","Sand","Aquafil"])
+    check("Numero","Informe o número do pedido").not().isEmpty(),
+    check("Cliente","Informe o cliente do pedido").not().isEmpty(),
+    check("Descricao","Informe o produto vendido").not().isEmpty(),
+    check("Valor","Informe o valor de venda").not().isEmpty(),
+    check("Empresa","Informe o fabricante do produto").isIn(['Briggs','Sands','Aquafil'])
 ]
 
 /**
@@ -36,7 +35,7 @@ router.post("/", validaPedido, async(request,response)=>{
         return response.status(400).json({
             errors: errors.array()
         })
-    }
+    } 
     try{
         let pedido = new Pedido(request.body)
         await pedido.save()

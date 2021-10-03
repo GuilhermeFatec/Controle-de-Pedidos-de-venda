@@ -13,9 +13,9 @@ POST {{baseURL}}/pedidos
 Content-Type: application/json
 
 {
-    "Numero":,
+    "Numero":"",
     "Cliente":"Node",
     "Descricao":"Barrier",
     "Valor":9000,
-    "Empresa":"Aquafil"
+    "Empresa":"Briggs"
 }

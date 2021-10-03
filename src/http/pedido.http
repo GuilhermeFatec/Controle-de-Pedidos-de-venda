@@ -1,0 +1,50 @@
+//Teste da API REST - Pedido
+
+@baseURL = http://localhost:5000
+
+@id = 6159cf88dc60d0ea84cd2ef7
+
+###
+//GET -  Lista todos os pedidos
+GET {{baseURL}}/pedidos
+Content-Type: application/json
+
+
+###
+//GET -  Lista um pedido via ID
+GET {{baseURL}}/pedidos/{{id}}
+Content-Type: application/json
+
+###
+//POST - Inclui novos pedidos
+POST {{baseURL}}/pedidos
+Content-Type: application/json
+
+{
+    "Numero":"7540",
+    "Cliente":"SANASA",
+    "Descricao":"Valvula",
+    "Valor":"11",
+    "Empresa":"Sand",
+    "Status":"Desenvolvimento"
+}
+###
+//DELETE - Deleta um pedido via ID
+DELETE  {{baseURL}}/pedidos/{{id}}
+Content-Type: application/json
+
+###
+//PUT - Altera um pedido
+PUT {{baseURL}}/pedidos
+Content-Type: application/json
+
+{
+    "_id": "6159cf7fdc60d0ea84cd2ef5",
+     "Numero":"6283",
+    "Cliente":"SANASA",
+    "Descricao":"Valvula",
+    "Valor":"188",
+    "Empresa":"Sand",
+    "Status": "Desenvolvimento"
+    
+}

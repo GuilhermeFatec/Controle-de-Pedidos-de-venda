@@ -1,0 +1,4 @@
+#Arquivos que serão ignorados
+
+node_modules
+.env

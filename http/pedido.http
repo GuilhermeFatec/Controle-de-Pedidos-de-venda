@@ -1,0 +1,21 @@
+//Teste da API REST - Pedido
+
+@baseURL = http://localhost:5000
+
+###
+//GET -  Lista todos os pedidos
+GET {{baseURL}}/pedidos
+Content-Type: application/json
+
+###
+//POST - Inclui novos pedidos
+POST {{baseURL}}/pedidos
+Content-Type: application/json
+
+{
+    "Numero":,
+    "Cliente":"Node",
+    "Descricao":"Barrier",
+    "Valor":9000,
+    "Empresa":"Aquafil"
+}
